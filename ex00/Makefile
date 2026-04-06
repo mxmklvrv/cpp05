@@ -1,7 +1,7 @@
 NAME = Bureaucrat
 
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++11
+CXXFLAGS = -Wall -Werror -Wextra -std=c++20
 
 SRC_DIR = src/
 OBJ_DIR = obj/
@@ -9,7 +9,7 @@ OBJ_DIR = obj/
 INCLUDES = -I ./inc
 HEADERS = inc/
 
-SRCS = src/main.cpp 
+SRCS = src/main.cpp
 OBJS = $(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRCS))
 .SECONDARY: $(OBJS)
 
