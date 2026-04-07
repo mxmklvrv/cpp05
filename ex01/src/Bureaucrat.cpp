@@ -1,7 +1,8 @@
 #include "Bureaucrat.hpp"
-// def constructor
+#include "Form.hpp"
+
 Bureaucrat::Bureaucrat(void) : _name("Pugna"), _grade(69){}
-// constructor
+
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name){
 	if(grade < 1){
 		std::cout << "Bureaucrat " << _name << ": ";
@@ -13,11 +14,11 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name){
 	}
 	_grade = grade;
 }
-// def distr
+
 Bureaucrat::~Bureaucrat(){}
-// copy constr
+
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other.getName()), _grade(other.getGrade()){}
-// ass op
+
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other){
 	if (this != &other)
 		_grade = other.getGrade();
@@ -54,6 +55,19 @@ void Bureaucrat::decrementGrade(void){
 		throw GradeTooLowException();
 	}
 	_grade++;
+}
+
+void Bureaucrat::signForm(Form& paper){
+	try
+	{
+		paper.beSigned(*this);
+		std::cout << "Bureaucrat " << getName() << " signed " << paper.getName() <<std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "Bureaucrat " << getName() << " could not sign " << paper.getName() << " because " << e.what() << std::endl;
+	}
+
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& body){
