@@ -1,4 +1,4 @@
-NAME = Bureaucrat
+NAME = Maggots
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++20
