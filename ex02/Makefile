@@ -7,9 +7,9 @@ SRC_DIR = src/
 OBJ_DIR = obj/
 
 INCLUDES = -I ./inc
-HEADERS = inc/Bureaucrat.hpp inc/Form.hpp
+HEADERS = inc/Bureaucrat.hpp inc/AForm.hpp inc/ShrubberyCreationForm.hpp inc/RobotomyRequestForm.hpp inc/PresidentialPardonForm.hpp
 
-SRCS = src/main.cpp src/Bureaucrat.cpp src/Form.cpp
+SRCS = src/main.cpp src/Bureaucrat.cpp src/AForm.cpp src/ShrubberyCreationForm.cpp src/RobotomyRequestForm.cpp src/PresidentialPardonForm.cpp
 
 OBJS = $(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRCS))
 .SECONDARY: $(OBJS)

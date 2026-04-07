@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("Pugna"), _grade(69){}
 
@@ -57,7 +57,7 @@ void Bureaucrat::decrementGrade(void){
 	_grade++;
 }
 
-void Bureaucrat::signForm(Form& paper){
+void Bureaucrat::signForm(AForm& paper){
 	try
 	{
 		paper.beSigned(*this);

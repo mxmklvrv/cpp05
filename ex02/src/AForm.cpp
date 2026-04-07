@@ -1,7 +1,7 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
 
-Form::Form(const std::string& name, int gradeToSign, int gradeToExec):
+AForm::AForm(const std::string& name, int gradeToSign, int gradeToExec):
 	_name(name),
 	_signed(false),
 	_gradeToSign(gradeToSign),
@@ -16,21 +16,21 @@ Form::Form(const std::string& name, int gradeToSign, int gradeToExec):
 		throw GradeTooLowException();
 	}
 }
-Form::Form(const Form& other) :
+AForm::AForm(const AForm& other) :
 	_name(other.getName()),
 	_signed(other.getSignStatus()),
 	_gradeToSign(other.getGradeToSign()),
 	_gradeToExec(other.getGradeToExec())
 {}
-Form& Form::operator=(const Form& other){
+AForm& AForm::operator=(const AForm& other){
 	if(this != &other)
 		_signed = other.getSignStatus();
 	return *this;
 }
 
-Form::~Form(){}
+AForm::~AForm(){}
 
-void Form::beSigned(const Bureaucrat& body){
+void AForm::beSigned(const Bureaucrat& body){
 	if(body.getGrade() > getGradeToSign())
 		throw GradeTooLowException();
 	if(getSignStatus() == true)
@@ -38,35 +38,35 @@ void Form::beSigned(const Bureaucrat& body){
 	_signed = true;
 }
 
-const std::string& Form::getName() const{
+const std::string& AForm::getName() const{
 	return _name;
 }
 
-int Form::getGradeToSign() const{
+int AForm::getGradeToSign() const{
 	return _gradeToSign;
 }
 
-int Form::getGradeToExec() const{
+int AForm::getGradeToExec() const{
 	return _gradeToExec;
 }
 
-bool Form::getSignStatus() const{
+bool AForm::getSignStatus() const{
 	return _signed;
 }
 
-const char* Form::GradeTooHighException::what() const noexcept{
+const char* AForm::GradeTooHighException::what() const noexcept{
 	return "grade too high";
 }
 
-const char* Form::GradeTooLowException::what() const noexcept{
+const char* AForm::GradeTooLowException::what() const noexcept{
 	return "grade too low";
 }
 
-const char* Form::AlreadySignedException::what() const noexcept{
+const char* AForm::AlreadySignedException::what() const noexcept{
 	return "form already signed";
 }
 
-std::ostream& operator<<(std::ostream& out, const Form& paper){
+std::ostream& operator<<(std::ostream& out, const AForm& paper){
 	out << "Form: " << paper.getName() << " is ";
 	if(paper.getSignStatus() == true)
 		out << "signed." << std::endl;

@@ -4,7 +4,7 @@
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
-class Form
+class AForm
 {
 private:
 	const std::string _name;
@@ -13,11 +13,11 @@ private:
 	const int _gradeToExec;
 
 public:
-	Form() = delete;
-	Form(const std::string& name, int gradeToSign, int gradeToExec);
-	Form(const Form& other);
-	Form& operator=(const Form& other);
-	~Form();
+	AForm() = delete;
+	AForm(const std::string& name, int gradeToSign, int gradeToExec);
+	AForm(const AForm& other);
+	AForm& operator=(const AForm& other);
+	virtual ~AForm();
 
 	const std::string& getName() const;
 	int	getGradeToSign() const;
@@ -43,4 +43,4 @@ public:
 
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& paper);
+std::ostream& operator<<(std::ostream& out, const AForm& paper);
