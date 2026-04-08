@@ -13,5 +13,7 @@ public:
 	RobotomyRequestForm(const std::string& target);
 	RobotomyRequestForm(const RobotomyRequestForm& other);
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
-	RobotomyRequestForm();
+	~RobotomyRequestForm();
+
+	void execute( const Bureaucrat& executor) const override;
 };

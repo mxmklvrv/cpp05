@@ -25,6 +25,7 @@ public:
 	bool getSignStatus() const;
 
 	void	beSigned(const Bureaucrat& body);
+	virtual void execute( const Bureaucrat& executor) const = 0;
 
 	class GradeTooHighException : public std::exception{
 		public:
@@ -37,6 +38,11 @@ public:
 	};
 
 	class AlreadySignedException : public std::exception{
+		public:
+			const char* what() const noexcept override;
+	};
+
+	class NotSignedException : public std::exception{
 		public:
 			const char* what() const noexcept override;
 	};

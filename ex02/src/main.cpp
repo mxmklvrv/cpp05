@@ -1,108 +1,107 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "AForm.hpp"
 
 void test1(){
-	std::cout << "\nBasic very nice test" << std::endl;
+	std::cout << "ShrubberyCreationForm test" << std::endl << std::endl;
 	try
 	{
-		Bureaucrat doom("Doom", 66);
-		Form zxc("666", 111, 99);
-		std::cout << doom << std::endl;
-		doom.signForm(zxc);
-		std::cout << zxc << std::endl;
-
+		Bureaucrat a("Maxim", 33);
+		std::cout << a << std::endl;
+		ShrubberyCreationForm qwe("pivo");
+		a.signForm(qwe);
+		a.executeForm(qwe);
+		std::cout << qwe << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << '\n';
 	}
+	try
+	{
+		Bureaucrat b("Not Maxim", 140);
+		std::cout << b << std::endl;
+		ShrubberyCreationForm asd("more pivo");
+		b.signForm(asd);
+		b.executeForm(asd);
+		std::cout << asd << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+
 }
 
 void test2(){
-	std::cout << "\nBasic very nice increment test" << std::endl;
+	std::cout << "PresidentialPardonForm test" << std::endl << std::endl;
 	try
 	{
-		Bureaucrat marci("Marci", 75);
-		Form asd("69", 69, 69);
-		std::cout << marci << std::endl;
-		marci.signForm(asd);
-		std::cout << asd << std::endl;
-		for(int i = 0; i < 6; i++){
-			marci.incrementGrade();
-			marci.signForm(asd);
-		}
-		std::cout << asd << std::endl;
+		Bureaucrat c("Maximilian", 2);
+		std::cout << c << std::endl;
+		PresidentialPardonForm zxc("vodka");
+
+		c.signForm(zxc);
+		c.executeForm(zxc);
+		std::cout << zxc << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		Bureaucrat d("Not Maximilian", 23);
+		std::cout << d << std::endl;
+		PresidentialPardonForm iop("alcohol free vodka");
+		d.signForm(iop);
+		d.executeForm(iop);
+		std::cout << iop << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 }
 
 void test3(){
-	std::cout << "\nBasic not very nice decrement test" << std::endl;
+	std::cout << "RobotomyRequestForm test" << std::endl << std::endl;
 	try
 	{
-		Bureaucrat abaddon("abaddon", 69);
-		Form qwe("228", 71, 44);
-		std::cout << abaddon << std::endl;
-		std::cout << qwe <<std::endl;
+		Bureaucrat e("Maxi", 6);
+		std::cout << e << std::endl;
+		RobotomyRequestForm jkl("pelmeny");
+		e.signForm(jkl);
+		e.executeForm(jkl);
 
-		for(int i = 0; i < 3; i++){
-			abaddon.decrementGrade();
-			abaddon.signForm(qwe);
-		}
-		std::cout << qwe << std::endl;
-
+		std::cout << jkl << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;;
-	}
-
-}
-
-void test4(){
-	std::cout << "\nBasic very bad form test" << std::endl;
-	try
-	{
-		Form pop("pop", -69, 123);
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;;
+		std::cerr << e.what() << '\n';
 	}
 	try
 	{
-		Form ment("ment", 222, 123);
+		Bureaucrat f("Not Maxi", 70);
+		std::cout << f << std::endl;
+		RobotomyRequestForm bnm("beans");
+		f.signForm(bnm);
+		f.executeForm(bnm);
+
+		std::cout << bnm << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;;
+		std::cerr << e.what() << '\n';
 	}
 }
 
-void test5(){
-	std::cout << "\nBasic very constructor test" << std::endl;
-	try
-	{
-		Form xim("123", 66 ,22);
-		std::cout << xim << std::endl;
-		Form ma(xim);
-		std::cout << ma << std::endl;
-
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
-}
 
 int main(){
 	test1();
 	test2();
 	test3();
-	test4();
-	test5();
 }

@@ -1,6 +1,5 @@
 #include "AForm.hpp"
 
-
 AForm::AForm(const std::string& name, int gradeToSign, int gradeToExec):
 	_name(name),
 	_signed(false),
@@ -64,6 +63,10 @@ const char* AForm::GradeTooLowException::what() const noexcept{
 
 const char* AForm::AlreadySignedException::what() const noexcept{
 	return "form already signed";
+}
+
+const char* AForm::NotSignedException::what() const noexcept{
+	return "form not signed";
 }
 
 std::ostream& operator<<(std::ostream& out, const AForm& paper){
