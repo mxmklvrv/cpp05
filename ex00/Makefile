@@ -1,4 +1,4 @@
-NAME = Bureaucrat
+NAME = Mommy
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++20

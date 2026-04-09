@@ -1,4 +1,4 @@
-NAME = Maggots
+NAME = MoreForms
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++20

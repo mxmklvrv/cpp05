@@ -13,11 +13,11 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name){
 	}
 	_grade = grade;
 }
-// def distr
+
 Bureaucrat::~Bureaucrat(){}
-// copy constr
+
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other.getName()), _grade(other.getGrade()){}
-// ass op
+
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other){
 	if (this != &other)
 		_grade = other.getGrade();

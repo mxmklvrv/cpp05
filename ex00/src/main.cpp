@@ -1,6 +1,5 @@
 #include "Bureaucrat.hpp"
 
-
 void test1(){
 	std::cout << "\nBasic fail test" << std::endl;
 	try
@@ -61,8 +60,6 @@ void test3(){
 	{
 		std::cout << e.what() << std::endl;;
 	}
-
-
 }
 
 void test4(){

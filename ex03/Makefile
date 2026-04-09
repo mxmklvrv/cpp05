@@ -1,4 +1,4 @@
-NAME = Intern
+NAME = PainOfIntern
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++20

@@ -67,7 +67,6 @@ void Bureaucrat::signForm(Form& paper){
 	{
 		std::cout << "Bureaucrat " << getName() << " could not sign " << paper.getName() << " because " << e.what() << std::endl;
 	}
-
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& body){

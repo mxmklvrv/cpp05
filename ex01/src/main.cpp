@@ -50,10 +50,10 @@ void test3(){
 
 		for(int i = 0; i < 3; i++){
 			abaddon.decrementGrade();
-			abaddon.signForm(qwe);
+			std::cout << abaddon << std::endl;
 		}
+		abaddon.signForm(qwe);
 		std::cout << qwe << std::endl;
-
 	}
 	catch(const std::exception& e)
 	{

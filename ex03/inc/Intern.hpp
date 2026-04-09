@@ -6,7 +6,7 @@ class Intern
 {
 private:
 	std::string _form[3];
-	AForm* (Intern::*func[3])(const std::string& target);
+	AForm* (Intern::*func[3])(const std::string& target); // arr of * to memb func
 public:
 	Intern(void);
 	Intern(const Intern& other) = delete;
