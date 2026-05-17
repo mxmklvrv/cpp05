@@ -28,6 +28,8 @@ clean:
 	rm -rf $(OBJ_DIR)
 fclean: clean
 	rm -f $(NAME)
+	rm -f vodka_shrubbery
+	
 re: fclean all
 
-.PHONY: fclean, all, re, clean
+.PHONY: fclean all re clean

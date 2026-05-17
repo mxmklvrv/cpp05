@@ -1,7 +1,6 @@
 #include "Bureaucrat.hpp"
-// def constructor
+
 Bureaucrat::Bureaucrat(void) : _name("Pugna"), _grade(69){}
-// constructor
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name){
 	if(grade < 1){
 		std::cout << "Bureaucrat " << _name << ": ";
